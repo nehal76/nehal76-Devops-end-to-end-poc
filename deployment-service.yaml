@@ -30,8 +30,8 @@ spec:
 
           # Recommended: Gives Spring Boot time to start before checking health
           startupProbe:
-            httpGet:
-              path: /actuator/health/liveness
+            tcpSocket:
+            
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
@@ -39,8 +39,8 @@ spec:
 
           # Recommended: Keeps checking if the app is still alive
           livenessProbe:
-            httpGet:
-              path: /actuator/health/liveness
+            tcpSocket:
+              
               port: 8080
             periodSeconds: 15
             timeoutSeconds: 3
